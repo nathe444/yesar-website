@@ -1,26 +1,354 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #fff8ec;
+  --gold: #e0b824;
+  --gold-deep: #9b7435;
+  --ink: #362f24;
+  --ink-nav: #070606;
+  --muted: rgba(54, 47, 36, 0.7);
+  --night: #362f24;
+  --night-card: #2a251e;
+  --card: #f8f0e2;
+  --paper: #fff8ec;
+
+  --u: calc(min(100vw, 1920px) / 1920);
+  --fs-64: calc(64 * var(--u));
+  --fs-40: calc(40 * var(--u));
+  --fs-35: calc(34.909 * var(--u));
+  --fs-26: calc(25.976 * var(--u));
+  --fs-20: calc(20 * var(--u));
+  --fs-18: calc(18 * var(--u));
+  --fs-10: calc(10.272 * var(--u));
+  --lh-79: calc(79 * var(--u));
+  --lh-43: calc(43.091 * var(--u));
+  --pad-x: calc(161 * var(--u));
+  --pad-grid: calc(143 * var(--u));
+  --pad-header: calc(47 * var(--u));
+  --pad-news: calc(88 * var(--u));
+  --pad-footer: calc(122 * var(--u));
+  --gap-nav: calc(46 * var(--u));
+  --gap-nav-cta: calc(51 * var(--u));
+  --gap-about: calc(41 * var(--u));
+  --gap-cards: calc(32 * var(--u));
+  --gap-stats: calc(148 * var(--u));
+  --gap-hero: calc(24 * var(--u));
+  --card-h: calc(753 * var(--u));
+  --folio-h: calc(352 * var(--u));
+  --cta-h: calc(607 * var(--u));
+  --news-left-h: calc(1087 * var(--u));
+  --news-top-h: calc(383 * var(--u));
+  --news-bot-h: calc(667 * var(--u));
+  --radius-card: calc(24 * var(--u));
+  --radius-pill: calc(39 * var(--u));
+  --pill-x: calc(31 * var(--u));
+  --pill-y: calc(11 * var(--u));
+  --logo-w: calc(39.216 * var(--u));
+  --logo-h: calc(33.891 * var(--u));
+  --header-pt: calc(45 * var(--u));
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --fs-64: clamp(2rem, 8vw, 2.75rem);
+    --fs-40: clamp(1.5rem, 5vw, 2rem);
+    --fs-35: clamp(1.35rem, 4.2vw, 1.75rem);
+    --fs-26: 1.35rem;
+    --fs-20: 1rem;
+    --fs-18: 0.9375rem;
+    --fs-10: 0.65rem;
+    --lh-79: 1.2;
+    --lh-43: 1.25;
+    --pad-x: 1.25rem;
+    --pad-grid: 1.25rem;
+    --pad-header: 1.15rem;
+    --pad-news: 1.25rem;
+    --pad-footer: 1.25rem;
+    --gap-nav: 1.25rem;
+    --gap-nav-cta: 1.25rem;
+    --gap-about: 1rem;
+    --gap-cards: 1rem;
+    --gap-stats: 1.5rem;
+    --gap-hero: 1rem;
+    --card-h: 22rem;
+    --folio-h: auto;
+    --cta-h: 28rem;
+    --news-left-h: 28rem;
+    --news-top-h: 14rem;
+    --news-bot-h: 18rem;
+    --radius-card: 24px;
+    --radius-pill: 39px;
+    --pill-x: 1.5rem;
+    --pill-y: 0.65rem;
+    --logo-w: 39px;
+    --logo-h: 34px;
+    --header-pt: 1.15rem;
+  }
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--cream);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-night: var(--night);
+  --color-night-card: var(--night-card);
+  --color-card: var(--card);
+  --color-paper: var(--paper);
+  --font-sans: var(--font-outfit);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-outfit), sans-serif;
+  font-feature-settings: "liga" 0, "clig" 0;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gold) 40%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.page {
+  margin-inline: auto;
+  max-width: 1920px;
+}
+
+.t-64 {
+  font-size: var(--fs-64);
+  font-weight: 600;
+  line-height: var(--lh-79);
+}
+
+.t-40 {
+  font-size: var(--fs-40);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.t-35 {
+  font-size: var(--fs-35);
+  font-weight: 600;
+  line-height: var(--lh-43);
+}
+
+.t-20 {
+  font-size: var(--fs-20);
+  line-height: normal;
+}
+
+.t-18 {
+  font-size: var(--fs-18);
+  line-height: normal;
+}
+
+.inset-x {
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+}
+
+.inset-grid {
+  padding-left: var(--pad-grid);
+  padding-right: var(--pad-grid);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  padding: var(--pill-y) var(--pill-x);
+  font-size: var(--fs-18);
+  white-space: nowrap;
+}
+
+.pill-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(34 * var(--u));
+  border-radius: var(--radius-pill);
+  padding: calc(7 * var(--u)) calc(31 * var(--u));
+  font-size: var(--fs-18);
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .pill-nav {
+    height: 2.5rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+/* Hero stage — Figma Group 108 (1875.86 × 955) with tower on the S */
+.hero-stage {
+  position: relative;
+  width: calc(1875.859 * var(--u));
+  height: calc(955 * var(--u));
+  margin-inline: auto;
+}
+
+.hero-copy {
+  position: absolute;
+  left: calc(138.871 * var(--u));
+  top: 0;
+  display: flex;
+  width: calc(1599 * var(--u));
+  height: calc(283 * var(--u));
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.hero-copy-left {
+  display: flex;
+  width: calc(583 * var(--u));
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(24 * var(--u));
+}
+
+.hero-copy-right {
+  width: calc(515 * var(--u));
+}
+
+.hero-mark {
+  position: absolute;
+  left: 0;
+  top: calc(184 * var(--u));
+  width: calc(1875.859 * var(--u));
+  height: calc(771 * var(--u));
+}
+
+.hero-wordmark {
+  position: absolute;
+  left: 0;
+  top: calc(276.908 * var(--u));
+  z-index: 1;
+  width: calc(1875.859 * var(--u));
+  height: calc(445.383 * var(--u));
+}
+
+.hero-s {
+  position: absolute;
+  left: calc(789.521 * var(--u));
+  top: calc(276.908 * var(--u));
+  z-index: 5;
+  width: calc(261.065 * var(--u));
+  height: calc(216.314 * var(--u));
+}
+
+.hero-accent {
+  position: absolute;
+  left: calc(793.671 * var(--u));
+  top: calc(262.8 * var(--u));
+  z-index: 2;
+  width: calc(274.9 * var(--u));
+  height: calc(158.4 * var(--u));
+}
+
+.hero-glow {
+  position: absolute;
+  left: calc(586.871 * var(--u));
+  top: calc(616 * var(--u));
+  z-index: 3;
+  width: calc(702 * var(--u));
+  height: calc(255 * var(--u));
+}
+
+.hero-tower {
+  position: absolute;
+  left: calc(692.871 * var(--u));
+  top: 0;
+  z-index: 4;
+  width: calc(491 * var(--u));
+  height: calc(736 * var(--u));
+}
+
+.hero-tower img {
+  width: calc(491 * var(--u));
+  height: calc(736 * var(--u));
+  max-width: none;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: calc(517 * var(--u)) calc(519 * var(--u)) calc(517 * var(--u));
+  gap: var(--gap-about);
+  align-items: start;
+}
+
+.about-card,
+.about-photo {
+  height: var(--card-h);
+}
+
+.folio-card {
+  height: var(--folio-h);
+}
+
+@media (max-width: 1023px) {
+  .about-card,
+  .about-photo {
+    height: auto;
+    min-height: 22rem;
+  }
+
+  .folio-card {
+    height: auto;
+  }
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: calc(964 * var(--u)) calc(738 * var(--u));
+  gap: calc(43 * var(--u));
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, calc(208 * var(--u)));
+  justify-content: center;
+  column-gap: var(--gap-stats);
+}
+
+@media (max-width: 1023px) {
+  .about-grid,
+  .news-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+    row-gap: 2rem;
+  }
 }
