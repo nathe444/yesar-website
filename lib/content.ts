@@ -16,38 +16,38 @@ export const stats = [
 export const businesses = [
   {
     unit: "Business unit 01",
-    title: "Yesar Construction",
+    title: "Yesar Construction and Engineering",
     body: "Delivering residential, commercial, and infrastructure projects across the region, from groundbreaking to handover.",
     featured: true,
   },
   {
     unit: "Business unit 02",
-    title: "Yesar Energy",
-    body: "Powering growth through renewable and conventional energy projects designed for long-term national impact.",
+    title: "WCCC (Trading)",
+    body: "Sourcing and supplying construction materials, equipment, and project inputs that keep Yesar sites moving on schedule.",
     featured: false,
   },
   {
     unit: "Business unit 03",
-    title: "Yesar Manufacturing",
-    body: "Delivering residential, commercial, and infrastructure projects across the region, from groundbreaking to handover.",
+    title: "Yesar Project Finance",
+    body: "Structuring capital and financial partnerships that take complex developments from feasibility through to delivery.",
     featured: false,
   },
   {
     unit: "Business unit 04",
-    title: "Yesar Agriculture",
-    body: "Powering growth through renewable and conventional energy projects designed for long-term national impact.",
+    title: "Yesar MEP",
+    body: "Designing and installing mechanical, electrical, and plumbing systems built for long-term building performance.",
     featured: false,
   },
   {
     unit: "Business unit 05",
-    title: "Yesar Logistics",
-    body: "Delivering residential, commercial, and infrastructure projects across the region, from groundbreaking to handover.",
+    title: "Yesar Pre-Stressing",
+    body: "Specialist prestressed and post-tensioned concrete solutions for longer spans, leaner structures, and stronger frames.",
     featured: false,
   },
   {
     unit: "Business unit 06",
-    title: "Yesar Real Estate",
-    body: "Powering growth through renewable and conventional energy projects designed for long-term national impact.",
+    title: "Yesar Fit-Out",
+    body: "Interior fit-out for hotels, offices, and civic spaces — finishing spaces to the same standard as the structure itself.",
     featured: false,
   },
 ] as const;
@@ -56,11 +56,12 @@ export const footer = {
   blurb:
     "One line group descriptor — reinforcing the multi-business identity one final time before the visitor leaves the page.",
   businesses: [
-    "Construction",
-    "Energy",
-    "Manufacturing",
-    "Agriculture",
-    "Logistics",
+    "Construction & Engineering",
+    "WCCC (Trading)",
+    "Project Finance",
+    "MEP",
+    "Pre-Stressing",
+    "Fit-Out",
   ],
   company: ["About Us", "Leadership", "Careers", "News", "Sustainability"],
   touch: [
