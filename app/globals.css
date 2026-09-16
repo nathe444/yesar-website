@@ -33,12 +33,12 @@
   --gap-cards: calc(32 * var(--u));
   --gap-stats: calc(148 * var(--u));
   --gap-hero: calc(24 * var(--u));
-  --card-h: calc(753 * var(--u));
+  --card-h: calc(520 * var(--u));
   --folio-h: calc(352 * var(--u));
   --cta-h: calc(607 * var(--u));
-  --news-left-h: calc(1087 * var(--u));
-  --news-top-h: calc(383 * var(--u));
-  --news-bot-h: calc(667 * var(--u));
+  --news-left-h: calc(860 * var(--u));
+  --news-top-h: calc(380 * var(--u));
+  --news-bot-h: calc(443 * var(--u));
   --radius-card: calc(24 * var(--u));
   --radius-pill: calc(39 * var(--u));
   --pill-x: calc(31 * var(--u));
@@ -302,12 +302,15 @@ body {
   display: grid;
   grid-template-columns: calc(517 * var(--u)) calc(519 * var(--u)) calc(517 * var(--u));
   gap: var(--gap-about);
-  align-items: start;
+  align-items: stretch;
 }
 
-.about-card,
+.about-card {
+  height: auto;
+}
+
 .about-photo {
-  height: var(--card-h);
+  min-height: calc(388 * var(--u));
 }
 
 .folio-card {
@@ -315,10 +318,14 @@ body {
 }
 
 @media (max-width: 1023px) {
-  .about-card,
-  .about-photo {
+  .about-card {
     height: auto;
     min-height: 22rem;
+  }
+
+  .about-photo {
+    min-height: 16rem;
+    aspect-ratio: 4 / 3;
   }
 
   .folio-card {

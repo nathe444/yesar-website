@@ -39,11 +39,11 @@ export function News() {
           }}
         >
           <article
-            className="relative overflow-hidden"
+            className="relative flex flex-col justify-end overflow-hidden"
             style={{
+              height: "var(--news-left-h)",
               minHeight: "var(--news-left-h)",
               borderRadius: "var(--radius-card)",
-              paddingTop: "calc(806 * var(--u))",
               paddingBottom: "calc(26 * var(--u))",
               paddingLeft: "calc(28 * var(--u))",
               paddingRight: "calc(28 * var(--u))",
@@ -53,8 +53,9 @@ export function News() {
               src={images.apartments}
               alt="Residential balcony facade of a Yesar development"
               fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover object-bottom"
+              quality={95}
+              sizes="(min-width: 1024px) 1920px, 100vw"
+              className="object-cover object-[center_40%]"
             />
             <div
               className="relative z-10 bg-cream"
@@ -82,21 +83,24 @@ export function News() {
             <div
               className="relative overflow-hidden"
               style={{
+                height: "var(--news-top-h)",
                 minHeight: "var(--news-top-h)",
                 borderRadius: "var(--radius-card)",
               }}
             >
               <Image
                 src={images.aerial}
-                alt="Aerial view of a coastal city skyline"
+                alt="Aerial view of a Yesar mixed-use development"
                 fill
-                sizes="(min-width: 1024px) 38vw, 100vw"
-                className="object-cover object-bottom"
+                quality={95}
+                sizes="(min-width: 1024px) 1600px, 100vw"
+                className="object-cover object-center"
               />
             </div>
             <div
               className="relative overflow-hidden"
               style={{
+                height: "var(--news-bot-h)",
                 minHeight: "var(--news-bot-h)",
                 borderRadius: "var(--radius-card)",
               }}
@@ -105,8 +109,9 @@ export function News() {
                 src={images.dining}
                 alt="Dining room interior in a Yesar residence"
                 fill
-                sizes="(min-width: 1024px) 38vw, 100vw"
-                className="object-cover object-bottom"
+                quality={95}
+                sizes="(min-width: 1024px) 1600px, 100vw"
+                className="object-cover object-center"
               />
             </div>
           </div>

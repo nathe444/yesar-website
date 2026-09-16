@@ -24,7 +24,7 @@ export function About() {
             className="about-card flex flex-col bg-night-card"
             style={{
               borderRadius: "var(--radius-card)",
-              paddingTop: "calc(287 * var(--u))",
+              paddingTop: "calc(56 * var(--u))",
               paddingBottom: "calc(55 * var(--u))",
               paddingLeft: "calc(46 * var(--u))",
               paddingRight: "calc(45 * var(--u))",
@@ -72,10 +72,11 @@ export function About() {
           >
             <Image
               src={images.aboutTower}
-              alt="Yesar headquarters podium and tower at dusk"
+              alt="ZHC Hotel exterior at dusk"
               fill
-              sizes="(min-width: 1024px) 27vw, 100vw"
-              className="object-cover object-bottom"
+              quality={95}
+              sizes="(min-width: 1024px) 1400px, 100vw"
+              className="object-cover object-[center_60%]"
             />
           </div>
           <div
@@ -84,10 +85,11 @@ export function About() {
           >
             <Image
               src={images.lobby}
-              alt="Hotel lobby and lounge interior"
+              alt="Adama Hotel side view"
               fill
-              sizes="(min-width: 1024px) 27vw, 100vw"
-              className="object-cover object-[69%_center]"
+              quality={95}
+              sizes="(min-width: 1024px) 1400px, 100vw"
+              className="object-cover object-[center_35%]"
             />
           </div>
         </div>
