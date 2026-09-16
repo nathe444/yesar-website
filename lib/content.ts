@@ -74,7 +74,7 @@ export const footer = {
 
 export const images = {
   tower: "/figma/tower.png",
-  wordmark: "/figma/wordmark.svg?v=4",
+  wordmark: "/figma/wordmark.svg?v=5",
   towerGlow: "/figma/tower-glow.svg",
   heroVector: "/figma/hero-vector.svg",
   heroAccent: "/figma/hero-accent.svg",

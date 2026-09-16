@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { images } from "@/lib/content";
+import { HeroMarkAnimation } from "./HeroMarkAnimation";
 
 function HeroCopy() {
   return (
@@ -46,41 +46,22 @@ export function Hero() {
             className="hero-wordmark"
           />
           <img
-            src={images.heroAccent}
-            alt=""
-            width={275}
-            height={158}
-            className="hero-accent"
-          />
-          <img
             src={images.towerGlow}
             alt=""
             width={702}
             height={255}
             className="hero-glow"
           />
-          <div className="hero-tower">
-            <Image
-              src={images.tower}
-              alt=""
-              width={491}
-              height={736}
-              priority
-            />
-          </div>
-          <img
-            src={images.heroVector}
-            alt=""
-            width={261}
-            height={216}
-            className="hero-s"
+          <HeroMarkAnimation
+            className="hero-anim"
+            media="(min-width: 1024px)"
           />
         </div>
       </div>
 
       <div className="flex flex-col gap-10 px-5 pt-10 lg:hidden">
         <HeroCopy />
-        <div className="relative mx-auto w-full max-w-[40rem] pt-[38%]">
+        <div className="relative mx-auto w-full max-w-[40rem] overflow-visible pt-[38%]">
           <img
             src={images.wordmark}
             alt="YESAR"
@@ -88,34 +69,9 @@ export function Hero() {
             height={445}
             className="relative z-10 h-auto w-full"
           />
-          <div
-            className="pointer-events-none absolute bottom-0 z-20"
-            style={{
-              left: "36.94%",
-              width: "26.17%",
-              height: "165.25%",
-            }}
-          >
-            <Image
-              src={images.tower}
-              alt=""
-              width={491}
-              height={736}
-              className="h-full w-full object-cover object-top"
-            />
-          </div>
-          <img
-            src={images.heroVector}
-            alt=""
-            width={261}
-            height={216}
-            className="pointer-events-none absolute z-30"
-            style={{
-              left: "42.09%",
-              top: "35.92%",
-              width: "13.92%",
-              height: "28.06%",
-            }}
+          <HeroMarkAnimation
+            className="hero-anim-mobile"
+            media="(max-width: 1023px)"
           />
         </div>
       </div>

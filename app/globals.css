@@ -243,6 +243,7 @@ body {
   top: calc(184 * var(--u));
   width: calc(1875.859 * var(--u));
   height: calc(771 * var(--u));
+  isolation: isolate;
 }
 
 .hero-wordmark {
@@ -296,6 +297,29 @@ body {
   max-width: none;
   object-fit: cover;
   object-position: center top;
+}
+
+.hero-anim {
+  position: absolute;
+  left: calc(97 * var(--u));
+  top: 0;
+  z-index: 4;
+  width: calc(1682 * var(--u));
+  height: calc(736 * var(--u));
+  max-width: none;
+  pointer-events: none;
+}
+
+.hero-anim-mobile {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 20;
+  width: 90%;
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .about-grid {
