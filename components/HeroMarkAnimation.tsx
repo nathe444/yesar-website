@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 
 const FRAME_COUNT = 124;
-const DURATION_MS = 6000;
 const WIDTH = 1536;
 const HEIGHT = 672;
 
@@ -35,6 +34,12 @@ function loadFrames() {
   return frameCachePromise;
 }
 
+function frameFromTrack(track: HTMLElement) {
+  const range = Math.max(track.offsetHeight * 0.4, window.innerHeight * 0.65);
+  const progress = Math.min(1, Math.max(0, window.scrollY / range));
+  return Math.round(progress * (FRAME_COUNT - 1));
+}
+
 export function HeroMarkAnimation({
   className,
   media,
@@ -63,49 +68,56 @@ export function HeroMarkAnimation({
     if (!canvas) return;
     const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
+    const track = canvas.closest("section") ?? canvas;
 
     const reduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
+    let frames: HTMLImageElement[] | null = null;
     let raf = 0;
-    let startedAt = 0;
+    let ticking = false;
     let cancelled = false;
+    let lastIndex = -1;
 
-    const draw = (frames: HTMLImageElement[], index: number) => {
+    const draw = (index: number) => {
+      if (!frames || index === lastIndex) return;
       const frame = frames[index];
       if (!frame?.complete || !frame.naturalWidth) return;
+      lastIndex = index;
       ctx.clearRect(0, 0, WIDTH, HEIGHT);
       ctx.drawImage(frame, 0, 0, WIDTH, HEIGHT);
     };
 
-    const play = (frames: HTMLImageElement[]) => {
-      if (reduced) {
-        draw(frames, FRAME_COUNT - 1);
-        return;
-      }
-      const tick = (now: number) => {
-        if (cancelled) return;
-        if (!startedAt) startedAt = now;
-        const t = Math.min(1, (now - startedAt) / DURATION_MS);
-        const index = Math.min(
-          FRAME_COUNT - 1,
-          Math.floor(t * (FRAME_COUNT - 1)),
-        );
-        draw(frames, index);
-        if (t < 1) raf = requestAnimationFrame(tick);
-      };
-      raf = requestAnimationFrame(tick);
+    const syncFrame = () => {
+      if (!frames || cancelled) return;
+      draw(reduced ? FRAME_COUNT - 1 : frameFromTrack(track));
     };
 
-    loadFrames().then((frames) => {
+    const onScrollOrResize = () => {
+      if (ticking) return;
+      ticking = true;
+      raf = requestAnimationFrame(() => {
+        ticking = false;
+        syncFrame();
+      });
+    };
+
+    loadFrames().then((loaded) => {
       if (cancelled) return;
-      draw(frames, 0);
-      play(frames);
+      frames = loaded;
+      syncFrame();
     });
+
+    if (!reduced) {
+      window.addEventListener("scroll", onScrollOrResize, { passive: true });
+      window.addEventListener("resize", onScrollOrResize);
+    }
 
     return () => {
       cancelled = true;
       cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onScrollOrResize);
     };
   }, [active]);
 
