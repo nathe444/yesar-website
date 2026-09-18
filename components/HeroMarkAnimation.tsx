@@ -82,8 +82,14 @@ export function HeroMarkAnimation({
     if (!canvas) return;
     const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
+    const pin = canvas.closest(".hero-pin");
+    const section = canvas.closest("section");
     const track =
-      canvas.closest(".hero-pin") ?? canvas.closest("section") ?? canvas;
+      pin instanceof HTMLElement
+        ? pin
+        : section instanceof HTMLElement
+          ? section
+          : canvas;
 
     const reduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
