@@ -244,6 +244,7 @@ body {
 
 .hero-stage {
   position: relative;
+  isolation: isolate;
   width: calc(1875.859 * var(--u));
   height: calc(955 * var(--u));
   transform: scale(var(--hero-fit));
@@ -272,11 +273,14 @@ body {
   position: absolute;
   left: calc(138.871 * var(--u));
   top: 0;
+  z-index: 6;
   display: flex;
   width: calc(1599 * var(--u));
-  height: calc(283 * var(--u));
+  min-height: calc(283 * var(--u));
+  height: auto;
   align-items: flex-end;
   justify-content: space-between;
+  overflow: visible;
 }
 
 .hero-copy-left {
