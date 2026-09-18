@@ -58,10 +58,11 @@ export function Location() {
           </div>
 
           <address
-            className="absolute z-10 max-w-[min(100%,28rem)] not-italic text-cream"
+            className="absolute z-10 not-italic text-cream"
             style={{
               left: "calc(28 * var(--u))",
               bottom: "calc(-72 * var(--u))",
+              width: "min(30rem, calc(100% - 56 * var(--u)))",
               background: "var(--night-card)",
               borderRadius: "var(--radius-card)",
               padding: "calc(32 * var(--u)) calc(36 * var(--u))",
