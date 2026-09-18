@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 const FRAME_COUNT = 124;
+const BUILD_END = 78;
+const BUILD_PORTION = 0.2;
 const WIDTH = 1536;
 const HEIGHT = 672;
 
@@ -35,9 +37,21 @@ function loadFrames() {
 }
 
 function frameFromTrack(track: HTMLElement) {
-  const range = Math.max(track.offsetHeight * 0.4, window.innerHeight * 0.65);
-  const progress = Math.min(1, Math.max(0, window.scrollY / range));
-  return Math.round(progress * (FRAME_COUNT - 1));
+  const extra = Math.max(1, track.offsetHeight - window.innerHeight);
+  const progress = Math.min(
+    1,
+    Math.max(0, -track.getBoundingClientRect().top / extra),
+  );
+
+  if (progress <= BUILD_PORTION) {
+    return Math.round((progress / BUILD_PORTION) * BUILD_END);
+  }
+
+  const wrap = (progress - BUILD_PORTION) / (1 - BUILD_PORTION);
+  return Math.min(
+    FRAME_COUNT - 1,
+    BUILD_END + Math.round(wrap * (FRAME_COUNT - 1 - BUILD_END)),
+  );
 }
 
 export function HeroMarkAnimation({
@@ -68,7 +82,8 @@ export function HeroMarkAnimation({
     if (!canvas) return;
     const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
-    const track = canvas.closest("section") ?? canvas;
+    const track =
+      canvas.closest(".hero-pin") ?? canvas.closest("section") ?? canvas;
 
     const reduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)",

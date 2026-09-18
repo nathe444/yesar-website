@@ -1,4 +1,5 @@
 import { images } from "@/lib/content";
+import { Header } from "./Header";
 import { HeroMarkAnimation } from "./HeroMarkAnimation";
 
 function HeroCopy() {
@@ -26,53 +27,54 @@ function HeroCopy() {
 
 export function Hero() {
   return (
-    <section
-      className="page"
-      style={{
-        paddingTop: "calc(194 * var(--u))",
-        paddingBottom: "calc(193 * var(--u))",
-      }}
-    >
-      <div className="hero-stage hidden lg:block">
-        <div className="hero-copy">
-          <HeroCopy />
-        </div>
-        <div className="hero-mark">
-          <img
-            src={images.wordmark}
-            alt="YESAR"
-            width={1876}
-            height={445}
-            className="hero-wordmark"
-          />
-          <img
-            src={images.towerGlow}
-            alt=""
-            width={702}
-            height={255}
-            className="hero-glow"
-          />
-          <HeroMarkAnimation
-            className="hero-anim"
-            media="(min-width: 1024px)"
-          />
-        </div>
-      </div>
+    <section className="hero-pin">
+      <div className="hero-sticky">
+        <Header />
+        <div className="hero-sticky-inner page">
+          <div className="hero-stage-fit hidden lg:block">
+            <div className="hero-stage">
+            <div className="hero-copy">
+              <HeroCopy />
+            </div>
+            <div className="hero-mark">
+              <img
+                src={images.wordmark}
+                alt="YESAR"
+                width={1876}
+                height={445}
+                className="hero-wordmark"
+              />
+              <img
+                src={images.towerGlow}
+                alt=""
+                width={702}
+                height={255}
+                className="hero-glow"
+              />
+              <HeroMarkAnimation
+                className="hero-anim"
+                media="(min-width: 1024px)"
+              />
+            </div>
+            </div>
+          </div>
 
-      <div className="flex flex-col gap-10 px-5 pt-10 lg:hidden">
-        <HeroCopy />
-        <div className="relative mx-auto w-full max-w-[40rem] overflow-visible pt-[38%]">
-          <img
-            src={images.wordmark}
-            alt="YESAR"
-            width={1876}
-            height={445}
-            className="relative z-10 h-auto w-full"
-          />
-          <HeroMarkAnimation
-            className="hero-anim-mobile"
-            media="(max-width: 1023px)"
-          />
+          <div className="flex flex-col gap-10 px-5 pt-10 lg:hidden">
+            <HeroCopy />
+            <div className="relative mx-auto w-full max-w-[40rem] overflow-visible pt-[38%]">
+              <img
+                src={images.wordmark}
+                alt="YESAR"
+                width={1876}
+                height={445}
+                className="relative z-10 h-auto w-full"
+              />
+              <HeroMarkAnimation
+                className="hero-anim-mobile"
+                media="(max-width: 1023px)"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
