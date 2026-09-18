@@ -211,7 +211,7 @@ body {
 /* Hero stage — Figma Group 108 (1875.86 × 955) with tower on the S */
 .hero-pin {
   position: relative;
-  height: 280vh;
+  height: 280dvh;
   background: var(--cream);
 }
 
@@ -220,7 +220,7 @@ body {
   top: 0;
   z-index: 20;
   display: flex;
-  height: 100vh;
+  height: 100dvh;
   flex-direction: column;
   overflow: hidden;
   background: var(--cream);
@@ -231,12 +231,14 @@ body {
   min-height: 0;
   flex: 1;
   align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
 .hero-stage-fit {
-  width: 100%;
-  height: min(calc(955 * var(--u)), calc(100dvh - 7.25rem));
+  --hero-fit: 1;
+  width: calc(1875.859 * var(--u) * var(--hero-fit));
+  height: calc(955 * var(--u) * var(--hero-fit));
   overflow: hidden;
 }
 
@@ -244,14 +246,13 @@ body {
   position: relative;
   width: calc(1875.859 * var(--u));
   height: calc(955 * var(--u));
-  margin-inline: auto;
-  transform: scale(min(1, calc((100dvh - 7.25rem) / (955 * var(--u)))));
-  transform-origin: top center;
+  transform: scale(var(--hero-fit));
+  transform-origin: top left;
 }
 
 @media (max-width: 1023px) {
   .hero-pin {
-    height: 220vh;
+    height: 220dvh;
   }
 }
 
@@ -324,15 +325,6 @@ body {
   z-index: 2;
   width: calc(274.9 * var(--u));
   height: calc(158.4 * var(--u));
-}
-
-.hero-glow {
-  position: absolute;
-  left: calc(586.871 * var(--u));
-  top: calc(616 * var(--u));
-  z-index: 3;
-  width: calc(702 * var(--u));
-  height: calc(255 * var(--u));
 }
 
 .hero-tower {

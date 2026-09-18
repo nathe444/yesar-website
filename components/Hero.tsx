@@ -1,6 +1,7 @@
 import { images } from "@/lib/content";
 import { Header } from "./Header";
 import { HeroMarkAnimation } from "./HeroMarkAnimation";
+import { HeroStageFit } from "./HeroStageFit";
 
 function HeroCopy() {
   return (
@@ -31,33 +32,26 @@ export function Hero() {
       <div className="hero-sticky">
         <Header />
         <div className="hero-sticky-inner page">
-          <div className="hero-stage-fit hidden lg:block">
+          <HeroStageFit>
             <div className="hero-stage">
-            <div className="hero-copy">
-              <HeroCopy />
+              <div className="hero-copy">
+                <HeroCopy />
+              </div>
+              <div className="hero-mark">
+                <img
+                  src={images.wordmark}
+                  alt="YESAR"
+                  width={1876}
+                  height={445}
+                  className="hero-wordmark"
+                />
+                <HeroMarkAnimation
+                  className="hero-anim"
+                  media="(min-width: 1024px)"
+                />
+              </div>
             </div>
-            <div className="hero-mark">
-              <img
-                src={images.wordmark}
-                alt="YESAR"
-                width={1876}
-                height={445}
-                className="hero-wordmark"
-              />
-              <img
-                src={images.towerGlow}
-                alt=""
-                width={702}
-                height={255}
-                className="hero-glow"
-              />
-              <HeroMarkAnimation
-                className="hero-anim"
-                media="(min-width: 1024px)"
-              />
-            </div>
-            </div>
-          </div>
+          </HeroStageFit>
 
           <div className="flex flex-col gap-10 px-5 pt-10 lg:hidden">
             <HeroCopy />
