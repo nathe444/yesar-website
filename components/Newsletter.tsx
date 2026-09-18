@@ -21,7 +21,6 @@ export function Newsletter() {
         paddingBottom: "calc(48 * var(--u))",
         paddingLeft: "calc(166 * var(--u))",
         paddingRight: "calc(166 * var(--u))",
-        marginBottom: "calc(232 * var(--u))",
       }}
     >
       <div

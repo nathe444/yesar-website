@@ -6,6 +6,7 @@ import { Portfolio } from "@/components/Portfolio";
 import { CtaBanner } from "@/components/CtaBanner";
 import { News } from "@/components/News";
 import { Newsletter } from "@/components/Newsletter";
+import { Location } from "@/components/Location";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
         <CtaBanner />
         <News />
         <Newsletter />
+        <Location />
       </main>
       <Footer />
     </div>

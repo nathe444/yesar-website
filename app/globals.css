@@ -34,6 +34,7 @@
   --gap-stats: calc(148 * var(--u));
   --gap-hero: calc(24 * var(--u));
   --card-h: calc(520 * var(--u));
+  --map-h: calc(420 * var(--u));
   --folio-h: calc(352 * var(--u));
   --cta-h: calc(607 * var(--u));
   --news-left-h: calc(860 * var(--u));
@@ -71,6 +72,7 @@
     --gap-stats: 1.5rem;
     --gap-hero: 1rem;
     --card-h: 22rem;
+    --map-h: 16rem;
     --folio-h: auto;
     --cta-h: 28rem;
     --news-left-h: 28rem;
@@ -369,6 +371,52 @@ body {
   grid-template-columns: repeat(4, calc(208 * var(--u)));
   justify-content: center;
   column-gap: var(--gap-stats);
+}
+
+.map-plate {
+  position: relative;
+  height: var(--map-h);
+  overflow: hidden;
+  background: var(--night-card);
+  border-radius: var(--radius-card);
+}
+
+.map-well {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--night-card);
+}
+
+.map-embed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: sepia(0.28) saturate(0.85) hue-rotate(-12deg) brightness(1.04)
+    contrast(1.06);
+}
+
+.map-wash,
+.map-vignette {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.map-wash {
+  background: color-mix(in srgb, var(--cream) 28%, transparent);
+  mix-blend-mode: soft-light;
+}
+
+.map-vignette {
+  background: radial-gradient(
+    ellipse at 50% 42%,
+    transparent 48%,
+    color-mix(in srgb, var(--cream) 55%, transparent) 100%
+  );
 }
 
 @media (max-width: 1023px) {

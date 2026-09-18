@@ -68,7 +68,7 @@ export const footer = {
     "Contact Us",
     "Regions / Offices",
     "Customer Support",
-    "09342342342 / Ethiopia, Addis Ababa",
+    "09342342342 / Gazebo Street, Addis Ababa",
   ],
   legal: ["Terms", "Privacy Policy", "Cookies"],
 } as const;
