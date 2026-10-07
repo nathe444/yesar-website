@@ -619,7 +619,12 @@ body {
   display: grid;
   grid-template-columns: minmax(0, calc(1135 * var(--u))) minmax(0, calc(468 * var(--u)));
   gap: calc(32 * var(--u));
-  align-items: stretch;
+  align-items: start;
+}
+
+.c-project-frame {
+  height: calc(605 * var(--u));
+  border-radius: var(--radius-card);
 }
 
 .c-project-list {

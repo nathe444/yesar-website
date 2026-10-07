@@ -54,11 +54,7 @@ export function ConstructionProjects() {
           alt={filter === "ALL PROJECTS" ? "Featured residential building at dusk" : feature.title}
           width={1135}
           height={605}
-          className="h-full w-full object-cover object-bottom"
-          style={{
-            borderRadius: "var(--radius-card)",
-            minHeight: "calc(605 * var(--u))",
-          }}
+          className="c-project-frame w-full object-cover object-bottom"
         />
         <div className="c-project-list">
           {visible.map((project) => (
