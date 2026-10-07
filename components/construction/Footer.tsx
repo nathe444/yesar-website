@@ -19,10 +19,7 @@ export function ConstructionFooter() {
                 alt=""
                 width={49.1039}
                 height={42.4357}
-                style={{
-                  width: "calc(49.104 * var(--u))",
-                  height: "calc(42.436 * var(--u))",
-                }}
+                className="c-footer-mark"
               />
               <span>
                 <span className="c-footer-name">YESAR</span>
@@ -61,16 +58,7 @@ export function ConstructionFooter() {
               <a
                 key={item.label}
                 href="#contact"
-                className={item.boxed ? "inline-flex items-center justify-center rounded-[9px] bg-[#fff8ec]" : "inline-flex"}
-                style={
-                  item.boxed
-                    ? {
-                        width: "calc(32 * var(--u))",
-                        height: "calc(32 * var(--u))",
-                        padding: "calc(8 * var(--u))",
-                      }
-                    : undefined
-                }
+                className={item.boxed ? "g-footer-icon g-footer-icon-boxed" : "g-footer-icon"}
               >
                 <span className="sr-only">{item.label}</span>
                 <img
@@ -78,10 +66,7 @@ export function ConstructionFooter() {
                   alt=""
                   width={item.width}
                   height={item.height}
-                  style={{
-                    width: `calc(${item.width} * var(--u))`,
-                    height: `calc(${item.height} * var(--u))`,
-                  }}
+                  className={item.boxed ? "g-footer-glyph" : "g-footer-glyph g-footer-glyph-full"}
                 />
               </a>
             ))}

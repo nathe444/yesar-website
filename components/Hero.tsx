@@ -53,15 +53,15 @@ export function Hero() {
             </div>
           </HeroStageFit>
 
-          <div className="flex flex-col gap-10 px-5 pt-10 lg:hidden">
+          <div className="hero-mobile">
             <HeroCopy />
-            <div className="relative mx-auto w-full max-w-[40rem] overflow-visible pt-[38%]">
+            <div className="hero-mobile-mark">
               <img
                 src={images.wordmark}
                 alt="YESAR"
                 width={1876}
                 height={445}
-                className="relative z-10 h-auto w-full"
+                className="hero-mobile-word"
               />
               <HeroMarkAnimation
                 className="hero-anim-mobile"

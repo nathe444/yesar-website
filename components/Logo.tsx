@@ -18,11 +18,11 @@ export function Logo({
         alt=""
         width={w}
         height={h}
-        className="shrink-0"
+        className={compact ? "shrink-0" : "g-footer-mark shrink-0"}
         style={
           compact
             ? { width: "var(--logo-w)", height: "var(--logo-h)" }
-            : { width: "calc(49.104 * var(--u))", height: "calc(42.436 * var(--u))" }
+            : undefined
         }
       />
       {inverted ? (
