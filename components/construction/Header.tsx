@@ -10,7 +10,7 @@ export function ConstructionHeader() {
   return (
     <header className="c-header">
       <div className="flex items-center justify-between gap-4">
-        <a href="#top" className="flex items-center" style={{ gap: "calc(8 * var(--u))" }}>
+        <a href="/" className="flex items-center" style={{ gap: "calc(8 * var(--u))" }}>
           <img
             src="/construction/logo.svg"
             alt=""
