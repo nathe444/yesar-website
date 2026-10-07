@@ -9,8 +9,8 @@ export function ConstructionHero() {
       <div className="c-hero-copy">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="flex min-w-0 max-w-full flex-col lg:w-[calc(583*var(--u))] lg:shrink-0" style={{ gap: "calc(24 * var(--u))" }}>
-            <p className="c-eyebrow t-20 font-light opacity-70">
-              Y E S A R C O N S T R U C T I O N · A Y E S A R G R O U P C O M P A N Y
+            <p className="c-eyebrow text-xl font-light opacity-70">
+              YESAR CONSTRUCTION · A YESAR GROUP COMPANY
             </p>
             <h1 className="t-64 text-[#472313]">WE BUILD WHAT COMMUNITIES STAND ON</h1>
           </div>

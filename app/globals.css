@@ -646,12 +646,84 @@ body {
   justify-content: center;
 }
 
+.c-contact-section {
+  padding: 0 var(--pad-grid) calc(192 * var(--u));
+}
+
 .c-contact {
   display: grid;
   grid-template-columns: minmax(0, calc(716 * var(--u))) minmax(0, calc(706 * var(--u)));
   gap: calc(90 * var(--u));
   justify-content: center;
   align-items: start;
+}
+
+.c-contact-intro,
+.c-contact-lead,
+.c-contact-heading,
+.c-contact-perks,
+.c-contact-form,
+.c-contact-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-contact-intro {
+  gap: calc(43 * var(--u));
+}
+
+.c-contact-lead {
+  gap: calc(9 * var(--u));
+}
+
+.c-contact-heading {
+  gap: calc(15 * var(--u));
+}
+
+.c-contact-title {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: calc(69 * var(--u));
+  white-space: nowrap;
+}
+
+.c-contact-perks {
+  gap: calc(12 * var(--u));
+}
+
+.c-contact-perks li {
+  display: flex;
+  align-items: center;
+  gap: calc(6 * var(--u));
+}
+
+.c-contact-perks img {
+  width: calc(11 * var(--u));
+  height: calc(11 * var(--u));
+}
+
+.c-contact-form {
+  gap: calc(36 * var(--u));
+}
+
+.c-contact-fields {
+  gap: calc(16 * var(--u));
+}
+
+.c-contact-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(12 * var(--u));
+}
+
+.c-contact-submit {
+  height: calc(42 * var(--u));
+  width: 100%;
+  border-radius: calc(10 * var(--u));
+  background: #472313;
+  color: #fff8ec;
+  font-size: var(--fs-20);
+  font-weight: 500;
 }
 
 .c-stats {
@@ -668,6 +740,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: calc(6 * var(--u));
+  min-width: 0;
+}
+
+.c-field > span {
+  padding-left: calc(18 * var(--u));
 }
 
 .c-field input,
@@ -901,6 +978,73 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .c-contact {
+    gap: 2.25rem;
+  }
+
+  .c-contact-section {
+    padding: 0 1.25rem 4.5rem;
+  }
+
+  .c-contact-intro {
+    gap: 1.5rem;
+  }
+
+  .c-contact-lead {
+    gap: 0.75rem;
+  }
+
+  .c-contact-heading {
+    gap: 0.5rem;
+  }
+
+  .c-contact-title {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+    line-height: 1.15;
+    white-space: normal;
+  }
+
+  .c-contact-perks {
+    gap: 0.75rem;
+  }
+
+  .c-contact-perks li {
+    gap: 0.5rem;
+  }
+
+  .c-contact-perks img {
+    width: 11px;
+    height: 11px;
+  }
+
+  .c-contact-form {
+    gap: 1.25rem;
+  }
+
+  .c-contact-fields {
+    gap: 1rem;
+  }
+
+  .c-contact-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .c-contact-submit {
+    height: auto;
+    min-height: 2.75rem;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+
+  .c-field {
+    gap: 0.4rem;
+  }
+
+  .c-field > span {
+    padding-left: 0.2rem;
+  }
+
   .c-stats {
     grid-template-columns: 1fr 1fr;
     row-gap: 2rem;
@@ -911,6 +1055,8 @@ body {
   .c-field textarea {
     border-radius: 10px;
     height: auto;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
   }
 
   .c-field input {
