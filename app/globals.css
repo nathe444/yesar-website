@@ -491,3 +491,468 @@ body {
     row-gap: 2rem;
   }
 }
+
+/* Yesar Construction landing — Figma page 131:2 */
+.c-hero {
+  position: relative;
+  height: calc(1366 * var(--u));
+  overflow: hidden;
+}
+
+.c-header {
+  position: absolute;
+  z-index: 30;
+  left: calc(47 * var(--u));
+  top: calc(45 * var(--u));
+  width: calc(1820 * var(--u));
+}
+
+.c-hero-copy {
+  position: absolute;
+  z-index: 6;
+  left: calc(161 * var(--u));
+  top: calc(263 * var(--u));
+  width: calc(1599 * var(--u));
+}
+
+.c-skyline {
+  position: absolute;
+  z-index: 1;
+  left: calc(7 * var(--u));
+  top: calc(468 * var(--u));
+  width: calc(1920 * var(--u));
+  height: calc(701 * var(--u));
+  pointer-events: none;
+}
+
+.c-skyline-art {
+  display: block;
+  width: calc(1920 * var(--u));
+  height: calc(701 * var(--u));
+  max-width: none;
+}
+
+.c-word-yesar,
+.c-word-con {
+  position: absolute;
+  z-index: 4;
+  margin: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.c-word-yesar {
+  left: calc(7 * var(--u));
+  top: calc(850 * var(--u));
+  height: calc(159 * var(--u));
+  color: #eaded1;
+  font-weight: 300;
+  font-size: calc(143.896 * var(--u));
+  line-height: calc(159 * var(--u));
+}
+
+.c-word-con {
+  left: calc(23 * var(--u));
+  top: calc(945 * var(--u));
+  height: calc(273 * var(--u));
+  color: #fff8ec;
+  font-weight: 400;
+  font-size: calc(247.006 * var(--u));
+  line-height: calc(273 * var(--u));
+  letter-spacing: 0;
+}
+
+.c-eyebrow {
+  white-space: nowrap;
+}
+
+.c-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(1169 * var(--u));
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.c-brand {
+  font-size: calc(24 * var(--u));
+}
+
+.c-fs-32 {
+  font-size: calc(32 * var(--u));
+  line-height: calc(41 * var(--u));
+}
+
+.c-fs-24 {
+  font-size: calc(24 * var(--u));
+}
+
+.c-fs-16 {
+  font-size: calc(16 * var(--u));
+}
+
+.c-lh-66 {
+  line-height: calc(66 * var(--u));
+}
+
+.c-lh-69 {
+  line-height: calc(69 * var(--u));
+}
+
+.c-about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, calc(707 * var(--u))) minmax(0, calc(769 * var(--u)));
+  gap: calc(123 * var(--u));
+  align-items: center;
+}
+
+.c-services {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(32 * var(--u));
+}
+
+.c-projects {
+  display: grid;
+  grid-template-columns: minmax(0, calc(1135 * var(--u))) minmax(0, calc(468 * var(--u)));
+  gap: calc(32 * var(--u));
+  align-items: stretch;
+}
+
+.c-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(22 * var(--u));
+}
+
+.c-why {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: calc(38 * var(--u));
+}
+
+.c-safety {
+  display: grid;
+  grid-template-columns: minmax(0, calc(775 * var(--u))) minmax(0, calc(770 * var(--u)));
+  gap: calc(38 * var(--u));
+  justify-content: center;
+}
+
+.c-contact {
+  display: grid;
+  grid-template-columns: minmax(0, calc(716 * var(--u))) minmax(0, calc(706 * var(--u)));
+  gap: calc(90 * var(--u));
+  justify-content: center;
+  align-items: start;
+}
+
+.c-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  min-height: calc(323 * var(--u));
+  background: linear-gradient(90deg, #f7ebd7 0%, #4c2919 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.c-field {
+  display: flex;
+  flex-direction: column;
+  gap: calc(6 * var(--u));
+}
+
+.c-field input,
+.c-field textarea {
+  width: 100%;
+  border: 1px solid rgba(71, 35, 19, 0.21);
+  border-radius: calc(10 * var(--u));
+  background: transparent;
+  color: #472313;
+  font: inherit;
+  font-size: var(--fs-18);
+  padding: calc(8 * var(--u)) calc(18 * var(--u));
+}
+
+.c-field input {
+  height: calc(42 * var(--u));
+}
+
+.c-field textarea {
+  height: calc(99 * var(--u));
+  resize: vertical;
+}
+
+.c-footer {
+  padding-top: calc(72 * var(--u));
+  padding-bottom: calc(61 * var(--u));
+  padding-left: calc(122 * var(--u));
+  padding-right: calc(43 * var(--u));
+}
+
+.c-footer-top {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(500 * var(--u));
+}
+
+.c-footer-brand {
+  width: calc(354 * var(--u));
+  flex-shrink: 0;
+}
+
+.c-footer-lockup {
+  display: flex;
+  align-items: center;
+  gap: calc(7.3 * var(--u));
+  color: #fff8ec;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.c-footer-name {
+  display: block;
+  font-size: calc(25.976 * var(--u));
+  font-weight: 700;
+  line-height: calc(31.764 * var(--u));
+}
+
+.c-footer-sub {
+  display: block;
+  margin-top: calc(0.22 * var(--u));
+  font-size: calc(10.272 * var(--u));
+  font-weight: 300;
+  line-height: calc(12.641 * var(--u));
+  letter-spacing: 0;
+}
+
+.c-footer-blurb {
+  width: calc(354 * var(--u));
+  margin-top: calc(34 * var(--u));
+  color: rgba(255, 248, 236, 0.25);
+  font-size: calc(20 * var(--u));
+  font-weight: 300;
+  line-height: calc(22 * var(--u));
+}
+
+.c-footer-cols {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(87 * var(--u));
+  width: calc(901 * var(--u));
+}
+
+.c-footer-col {
+  width: calc(160 * var(--u));
+  flex-shrink: 0;
+}
+
+.c-footer-title {
+  color: #fff8ec;
+  font-size: calc(20 * var(--u));
+  font-weight: 500;
+  line-height: calc(22 * var(--u));
+}
+
+.c-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: calc(15 * var(--u));
+  margin-top: calc(29 * var(--u));
+  color: rgba(255, 248, 236, 0.5);
+  font-size: calc(20 * var(--u));
+  font-weight: 300;
+  line-height: calc(22 * var(--u));
+}
+
+.c-footer-links a {
+  white-space: nowrap;
+}
+
+.c-footer-phone a {
+  white-space: normal;
+}
+
+.c-footer-phone {
+  width: calc(201 * var(--u));
+}
+
+.c-footer-lower {
+  width: calc(1717 * var(--u));
+  margin-top: calc(150 * var(--u));
+}
+
+.c-footer-social {
+  display: flex;
+  align-items: center;
+  gap: calc(10 * var(--u));
+}
+
+.c-footer-legal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: calc(34 * var(--u));
+  color: rgba(255, 248, 236, 0.5);
+  font-size: calc(20 * var(--u));
+  font-weight: 300;
+  line-height: calc(22 * var(--u));
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .c-hero {
+    height: auto;
+    overflow: visible;
+  }
+
+  .c-mark {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .c-brand {
+    font-size: 0.95rem;
+  }
+
+  .c-fs-32 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .c-fs-24 {
+    font-size: 1.2rem;
+  }
+
+  .c-fs-16 {
+    font-size: 0.75rem;
+  }
+
+  .c-lh-66,
+  .c-lh-69 {
+    line-height: 1.15;
+  }
+
+  .c-header,
+  .c-hero-copy {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+  }
+
+  .c-header {
+    padding: 1.15rem 1.15rem 0;
+  }
+
+  .c-hero-copy {
+    max-width: 100%;
+    padding: 2rem 1.25rem 1.25rem;
+  }
+
+  .c-eyebrow {
+    white-space: normal;
+  }
+
+  .c-hero-aside {
+    max-width: 100%;
+  }
+
+  .c-skyline {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1920 / 701;
+  }
+
+  .c-skyline-art {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1920 / 701;
+  }
+
+  .c-word-yesar,
+  .c-word-con {
+    left: calc(7 * var(--u));
+  }
+
+  .c-word-con {
+    left: calc(23 * var(--u));
+    
+  }
+
+  .c-about-grid,
+  .c-services,
+  .c-projects,
+  .c-why,
+  .c-safety,
+  .c-contact,
+  .c-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .c-stats {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+    padding: 3rem 1.25rem;
+  }
+
+  .c-field input,
+  .c-field textarea {
+    border-radius: 10px;
+    height: auto;
+  }
+
+  .c-field input {
+    min-height: 2.75rem;
+  }
+
+  .c-field textarea {
+    min-height: 6.5rem;
+  }
+
+  .c-footer {
+    padding: 3rem 1.25rem 2.5rem;
+  }
+
+  .c-footer-top,
+  .c-footer-cols,
+  .c-footer-legal {
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    gap: 2rem;
+    white-space: normal;
+  }
+
+  .c-footer-brand,
+  .c-footer-blurb,
+  .c-footer-col,
+  .c-footer-lower,
+  .c-footer-phone {
+    width: auto;
+  }
+
+  .c-footer-name {
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+
+  .c-footer-sub {
+    font-size: 0.65rem;
+    line-height: 1.2;
+  }
+
+  .c-footer-blurb,
+  .c-footer-title,
+  .c-footer-links,
+  .c-footer-legal {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+}

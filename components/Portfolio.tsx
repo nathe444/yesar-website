@@ -51,7 +51,7 @@ export function Portfolio() {
                   <p className="t-20 font-light text-ink/70">{item.body}</p>
                 </div>
                 <a
-                  href="#contact"
+                  href={item.unit === "Business unit 01" ? "/construction" : "#contact"}
                   className="pill w-fit border-[0.5px] border-ink/55 text-ink"
                 >
                   LEARN MORE
