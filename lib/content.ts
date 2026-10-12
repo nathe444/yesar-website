@@ -13,42 +13,58 @@ export const stats = [
   { value: "6+", label: "Regions reached" },
 ] as const;
 
+export const soonUnits = {
+  trading: "Trading",
+  finance: "Project Finance",
+  mep: "MEP",
+  "pre-stressing": "Pre-Stressing",
+  "fit-out": "Fit-Out",
+} as const;
+
+export type SoonUnit = keyof typeof soonUnits;
+
 export const businesses = [
   {
     unit: "Business unit 01",
     title: "Yesar Construction and Engineering",
     body: "Delivering residential, commercial, and infrastructure projects across the region, from groundbreaking to handover.",
     featured: true,
+    href: "/construction",
   },
   {
     unit: "Business unit 02",
     title: "WCCC (Trading)",
     body: "Sourcing and supplying construction materials, equipment, and project inputs that keep Yesar sites moving on schedule.",
     featured: false,
+    href: "/coming-soon?unit=trading",
   },
   {
     unit: "Business unit 03",
     title: "Yesar Project Finance",
     body: "Structuring capital and financial partnerships that take complex developments from feasibility through to delivery.",
     featured: false,
+    href: "/coming-soon?unit=finance",
   },
   {
     unit: "Business unit 04",
     title: "Yesar MEP",
     body: "Designing and installing mechanical, electrical, and plumbing systems built for long-term building performance.",
     featured: false,
+    href: "/coming-soon?unit=mep",
   },
   {
     unit: "Business unit 05",
     title: "Yesar Pre-Stressing",
     body: "Specialist prestressed and post-tensioned concrete solutions for longer spans, leaner structures, and stronger frames.",
     featured: false,
+    href: "/coming-soon?unit=pre-stressing",
   },
   {
     unit: "Business unit 06",
     title: "Yesar Fit-Out",
     body: "Interior fit-out for hotels, offices, and civic spaces — finishing spaces to the same standard as the structure itself.",
     featured: false,
+    href: "/coming-soon?unit=fit-out",
   },
 ] as const;
 
