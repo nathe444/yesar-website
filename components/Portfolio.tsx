@@ -43,9 +43,24 @@ export function Portfolio() {
                     className="flex flex-col"
                     style={{ gap: "calc(8 * var(--u))" }}
                   >
-                    <p className="t-20 font-light uppercase text-ink/40">
-                      {item.unit}
-                    </p>
+                    {item.href === "/construction" ? (
+                      <p className="flex items-center text-[#472313]" style={{ gap: "calc(8 * var(--u))" }}>
+                        <img
+                          src="/construction/logo.svg"
+                          alt=""
+                          width={39.2162}
+                          height={33.8908}
+                          style={{ width: "var(--logo-w)", height: "var(--logo-h)" }}
+                        />
+                        <span className=" text-sm font-semibold whitespace-nowrap ">
+                          YESAR CONSTRUCTION
+                        </span>
+                      </p>
+                    ) : (
+                      <p className="t-20 font-light uppercase text-ink/40">
+                        {item.unit}
+                      </p>
+                    )}
                     <h3 className="t-35 text-ink">{item.title}</h3>
                   </div>
                   <p className="t-20 font-light text-ink/70">{item.body}</p>
