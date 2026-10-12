@@ -16,21 +16,16 @@ function whenIdle(signal: AbortSignal) {
       return;
     }
 
-    let idleId = 0;
-    let timeoutId = 0;
     const finish = () => resolve();
-    const cancel = () => {
-      if (idleId) window.cancelIdleCallback(idleId);
-      if (timeoutId) window.clearTimeout(timeoutId);
-      reject(new DOMException("Aborted", "AbortError"));
-    };
-
-    signal.addEventListener("abort", cancel, { once: true });
-    if ("requestIdleCallback" in window) {
-      idleId = window.requestIdleCallback(finish, { timeout: 2000 });
-    } else {
-      timeoutId = window.setTimeout(finish, 32);
-    }
+    const idleId = window.requestIdleCallback(finish, { timeout: 2000 });
+    signal.addEventListener(
+      "abort",
+      () => {
+        window.cancelIdleCallback(idleId);
+        reject(new DOMException("Aborted", "AbortError"));
+      },
+      { once: true },
+    );
   });
 }
 
