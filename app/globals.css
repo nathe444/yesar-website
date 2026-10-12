@@ -682,6 +682,69 @@ body {
   border-radius: var(--radius-card);
 }
 
+.c-showcase {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  background: #efe4d0;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.c-showcase-stage {
+  position: absolute;
+  inset: 0;
+}
+
+.c-showcase-live {
+  cursor: grab;
+  touch-action: none;
+}
+
+.c-showcase-live:active {
+  cursor: grabbing;
+}
+
+.c-showcase:focus-visible {
+  outline-offset: 4px;
+}
+
+.c-showcase-hint,
+.c-showcase-status {
+  margin: 0;
+  color: #472313;
+  pointer-events: none;
+}
+
+.c-showcase-hint {
+  position: absolute;
+  left: calc(18 * var(--u));
+  bottom: calc(16 * var(--u));
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(71, 35, 19, 0.72);
+  color: #fff8ec;
+  font-size: clamp(0.75rem, calc(14 * var(--u)), 0.875rem);
+  letter-spacing: 0.04em;
+}
+
+.c-showcase-status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: clamp(0.875rem, calc(18 * var(--u)), 1.125rem);
+}
+
+@media (max-width: 1023px) {
+  .c-showcase {
+    height: auto;
+    aspect-ratio: 16 / 10;
+    min-height: 18rem;
+  }
+}
+
 .c-project-list {
   display: flex;
   flex-direction: column;
@@ -1035,7 +1098,7 @@ body {
   .c-safety,
   .c-contact,
   .c-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .c-contact {

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import dynamic from "next/dynamic";
+import { useEffect, useRef, useState } from "react";
 import {
   constructionProjects,
   projectFilters,
@@ -8,14 +9,48 @@ import {
 } from "@/lib/construction";
 import { Pill } from "./Pill";
 
+const ModelShowcase = dynamic(
+  () => import("./ModelShowcase").then((mod) => mod.ModelShowcase),
+  { ssr: false },
+);
+
+function ModelShowcaseSlot() {
+  const frameRef = useRef<HTMLDivElement>(null);
+  const [near, setNear] = useState(false);
+
+  useEffect(() => {
+    const frame = frameRef.current;
+    if (!frame) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+        setNear(true);
+        observer.disconnect();
+      },
+      { rootMargin: "480px 0px" },
+    );
+    observer.observe(frame);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={frameRef} className="c-project-frame c-showcase">
+      {near ? (
+        <ModelShowcase />
+      ) : (
+        <p className="c-showcase-status">Loading model</p>
+      )}
+    </div>
+  );
+}
+
 export function ConstructionProjects() {
   const [filter, setFilter] = useState<ProjectFilter>("ALL PROJECTS");
   const visible =
     filter === "ALL PROJECTS"
       ? constructionProjects
       : constructionProjects.filter((project) => project.category === filter);
-  const feature = visible[0];
-
   return (
     <section
       id="projects"
@@ -49,13 +84,7 @@ export function ConstructionProjects() {
         </div>
       </div>
       <div className="c-projects" style={{ marginTop: "calc(44 * var(--u))" }}>
-        <img
-          src={filter === "ALL PROJECTS" ? "/construction/project-featured.png" : feature.image}
-          alt={filter === "ALL PROJECTS" ? "Featured residential building at dusk" : feature.title}
-          width={1135}
-          height={605}
-          className="c-project-frame w-full object-cover object-bottom"
-        />
+        <ModelShowcaseSlot />
         <div className="c-project-list">
           {visible.map((project) => (
             <article
