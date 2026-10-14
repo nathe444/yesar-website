@@ -1906,6 +1906,8 @@ body {
   font-weight: 600;
   line-height: calc(28 * var(--u));
   white-space: nowrap;
+  margin-right: auto;
+  margin-left: calc(140 * var(--u));
 }
 
 .tr-regions li {
