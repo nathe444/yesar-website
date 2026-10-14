@@ -36,7 +36,7 @@ export const businesses = [
     title: "WCCC (Trading)",
     body: "Sourcing and supplying construction materials, equipment, and project inputs that keep Yesar sites moving on schedule.",
     featured: false,
-    href: "/coming-soon?unit=trading",
+    href: "/trading",
   },
   {
     unit: "Business unit 03",
