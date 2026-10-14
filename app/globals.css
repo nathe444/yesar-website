@@ -1762,8 +1762,7 @@ body {
   width: calc(826 * var(--u));
   height: calc(705 * var(--u));
   border-radius: calc(24 * var(--u));
-  object-fit: cover;
-  object-position: bottom;
+  object-fit: fill;
 }
 
 .tr-stats {

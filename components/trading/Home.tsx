@@ -77,7 +77,10 @@ export function TradingHome() {
             className="tr-about-photo"
           />
         </section>
-        <section className="tr-stats" aria-label="Trading figures">
+        
+      </div>
+
+      <section className="tr-stats mb-12" aria-label="Trading figures" >
           {tradingStats.map((stat) => (
             <div key={stat.label}>
               <p className="tr-stat">{stat.value}</p>
@@ -85,7 +88,6 @@ export function TradingHome() {
             </div>
           ))}
         </section>
-      </div>
 
       <section id="import" className="tr-catalog">
         <div className="tr-catalog-head">
