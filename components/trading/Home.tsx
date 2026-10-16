@@ -156,8 +156,8 @@ export function TradingHome() {
       </section>
 
       <section className="tr-why">
-        <p className="tr-kicker">W H Y C H O O S E U S</p>
-        <h2 className="tr-h2">A trading partner backed by a full group</h2>
+        <p className="tr-kicker mb-4">WHY CHOOSE US</p>
+        <h2 className=" tr-h2">A trading partner backed by a full group</h2>
         <div className="tr-why-grid">
           {tradingReasons.map((reason) => (
             <article key={reason.index}>
@@ -173,19 +173,25 @@ export function TradingHome() {
         <p className="tr-kicker">T R U S T E D B Y</p>
         <h2 className="tr-h2">Our partners &amp; suppliers</h2>
         <div className="tr-logo-row">
-          {tradingPartners.map((logo, index) => (
-            <img
-              key={`${logo.src}-${index}`}
-              src={logo.src}
-              alt=""
-              width={logo.width}
-              height={logo.height}
-              style={{
-                width: `calc(${logo.width} * var(--u))`,
-                height: `calc(${logo.height} * var(--u))`,
-              }}
-            />
-          ))}
+          <div className="tr-logo-track">
+            {[0, 1].map((copy) => (
+              <div className="tr-logo-set" key={copy} aria-hidden={copy === 1}>
+                {tradingPartners.map((logo, index) => (
+                  <img
+                    key={`${logo.src}-${index}`}
+                    src={logo.src}
+                    alt=""
+                    width={logo.width}
+                    height={logo.height}
+                    style={{
+                      width: `calc(${logo.width} * var(--u))`,
+                      height: `calc(${logo.height} * var(--u))`,
+                    }}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

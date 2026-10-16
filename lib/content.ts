@@ -7,10 +7,10 @@ export const nav = [
 ] as const;
 
 export const stats = [
-  { value: "35+", label: "Years of operation" },
-  { value: "100+", label: "Projects completed" },
-  { value: "5+", label: "Sectors involved in" },
-  { value: "6+", label: "Regions reached" },
+  { value: "20+", label: "Years of operations" },
+  { value: "70+", label: "Projects completed" },
+  { value: "4+", label: "Regions reached" },
+  { value: "60+", label: "Loyal clients" },
 ] as const;
 
 export const soonUnits = {

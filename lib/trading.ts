@@ -8,10 +8,10 @@ export const tradingNav = [
 ] as const;
 
 export const tradingStats = [
-  { value: "35+", label: "YEARS OF OPERATION" },
-  { value: "100+", label: "PROJECTS COMPLETED" },
-  { value: "5+", label: "SECTORS INVOLVED IN" },
-  { value: "6+", label: "REGIONS REACHED" },
+  { value: "20+", label: "YEARS OF OPERATIONS" },
+  { value: "70+", label: "PROJECTS COMPLETED" },
+  { value: "4+", label: "REGIONS REACHED" },
+  { value: "60+", label: "LOYAL CLIENTS" },
 ] as const;
 
 export const tradingImports = [
